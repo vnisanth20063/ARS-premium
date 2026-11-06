@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="theme-color" content="#07080a"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ARS — The Art of Automotive Detailing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--c:#111317;--g:#1b1e24;--r:#e11d2e;--w:#f4f5f7;--m:#8d939c;--s:#c3c8ce;--h:'Barlow Condensed','Arial Narrow',sans-serif;--b:'Barlow',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px;background:var(--bg)}*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--w);font:400 16px/1.6 var(--b)}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.w{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+section{position:relative;padding:clamp(70px,10vw,140px) 0}
+h1,h2,h3{font-family:var(--h);text-transform:uppercase;line-height:.95;font-weight:800}
+h2{font-size:clamp(38px,6.5vw,88px)}h3{font-size:24px;font-weight:700}
+.lb{font:700 13px var(--h);letter-spacing:.28em;color:var(--r);text-transform:uppercase;display:block;margin-bottom:18px}
+.lb:before{content:"";display:inline-block;width:34px;height:1px;background:var(--r);vertical-align:middle;margin-right:12px}
+em{font-style:normal;color:var(--r)}p.sub{color:var(--s);max-width:560px;margin-top:22px}
+.btn{display:inline-block;font:700 15px var(--h);letter-spacing:.16em;text-transform:uppercase;padding:16px 30px;background:var(--r);color:#fff;border:1px solid var(--r);transition:.3s;cursor:pointer}
+.btn:hover{background:transparent}.btn.o{background:transparent;border-color:#ffffff55}.btn.o:hover{border-color:#fff}
+.ph{background:repeating-linear-gradient(135deg,#15181d 0 14px,#101216 14px 28px);display:grid;place-items:center;color:var(--m);font:700 12px var(--h);letter-spacing:.2em;text-align:center}
+.rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:1s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none;filter:none}
+.ph-note{font-size:12px;color:var(--m);margin-top:14px}
+/* loader */
+#ld{position:fixed;inset:0;z-index:99;background:#000;display:grid;place-items:center;transition:opacity .8s .2s,visibility 0s 1s}
+#ld.x{opacity:0;visibility:hidden}#ld b{font:800 clamp(60px,12vw,140px) var(--h);letter-spacing:.12em;opacity:0;animation:li 1s .6s forwards}
+#ld i{position:absolute;left:50%;top:50%;height:2px;width:0;background:var(--r);transform:translate(-50%,70px);animation:ln 1.6s .1s forwards}
+@keyframes li{to{opacity:1;transform:scale(1.04)}}@keyframes ln{50%{width:90px}to{width:60vw}}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;padding:22px 0;padding-top:calc(22px + env(safe-area-inset-top,0px));transition:.4s;border-bottom:1px solid transparent}
+header.s{background:#07080acc;backdrop-filter:blur(14px);border-color:#ffffff18;padding-top:calc(12px + env(safe-area-inset-top,0px));padding-bottom:12px}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:800 34px var(--h);letter-spacing:.14em;display:flex;align-items:center;gap:10px;transition:.4s}header.s .logo{font-size:38px}
+.logo:before{content:"";width:22px;height:22px;border:2px solid var(--r);border-radius:50%;border-right-color:transparent;transform:rotate(-30deg)}
+nav{display:flex;gap:22px}nav a{font:700 14px var(--h);letter-spacing:.16em;text-transform:uppercase;color:var(--s);transition:.3s}nav a:hover{color:var(--r)}
+.bk{padding:11px 20px;font-size:13px}.ham{display:none;background:none;border:0;color:#fff;font-size:28px}
+/* hero */
+#hero{height:100svh;min-height:640px;padding:0;overflow:hidden;display:flex;align-items:flex-end}
+.sl{position:absolute;inset:0;opacity:0;transition:opacity 1.4s}.sl.on{opacity:1}
+.sl img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 9s linear}.sl.on img{transform:scale(1)}
+#hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#07080a 4%,#07080a00 55%),linear-gradient(90deg,#07080aee,#07080a22 70%)}
+.gr{position:absolute;inset:-50%;z-index:2;pointer-events:none;opacity:.09;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr .6s steps(3) infinite}
+@keyframes gr{50%{transform:translate(-3%,2%)}}
+.hc{position:relative;z-index:3;padding-bottom:clamp(60px,9vh,110px);width:100%}
+#hero h1{font-size:clamp(54px,10.5vw,150px)}#hero h1 span{display:inline-block;opacity:0;transform:translateY(60%);transition:1s cubic-bezier(.2,.7,.2,1)}
+.go #hero h1 span,.go .hf{opacity:1;transform:none}.hf{opacity:0;transform:translateY(24px);transition:1s .9s}
+.hf p{color:var(--s);margin:22px 0 28px;max-width:440px}.hf .btn{margin:0 10px 10px 0}
+.ind{position:absolute;right:clamp(18px,4vw,48px);top:50%;z-index:4;font:700 14px var(--h);letter-spacing:.2em;writing-mode:vertical-rl;color:var(--s)}.ind b{color:var(--r)}
+/* intro */
+.sp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.im{overflow:hidden;position:relative;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1)}.im.in{clip-path:inset(0)}
+.im img{width:100%;height:100%;object-fit:cover;transition:transform 1s,filter .6s;filter:brightness(.85)}.im:hover img{transform:scale(1.06);filter:brightness(1.05)}
+.im:after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--r);transition:.6s}.im:hover:after{width:100%}
+.ph-big{aspect-ratio:4/5}.sp p{color:var(--s);margin-top:18px}.sp .btn{margin-top:28px}
+/* philosophy */
+#ph{height:360vh;padding:0;background:#000}.st{position:sticky;top:0;height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden}
+.st h2{position:absolute;font-size:clamp(46px,10vw,150px);opacity:0;transform:scale(.92);filter:blur(14px);transition:.9s;padding:0 18px}.st h2.on{opacity:1;transform:none;filter:none}
+.st i{position:absolute;bottom:0;left:0;height:3px;background:var(--r);width:0}
+/* cards */
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.cd{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--g)}.cd img,.cd .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s,filter .6s;filter:brightness(.7)}
+.cd:hover img{transform:scale(1.08);filter:brightness(1)}.cd:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,#07080aee 12%,#0000 60%)}
+.cd div{position:absolute;z-index:2;left:22px;right:22px;bottom:22px;transition:transform .5s}.cd:hover div{transform:translateY(-8px)}
+.cd small{font:700 14px var(--h);color:var(--r);letter-spacing:.2em}.cd p{font-size:14px;color:var(--s);max-height:0;opacity:0;overflow:hidden;transition:.5s;margin-top:6px}.cd:hover p{max-height:120px;opacity:1}
+.cd:after{content:"";position:absolute;z-index:2;left:0;bottom:0;height:3px;width:0;background:var(--r);transition:.6s}.cd:hover:after{width:100%}
+/* horizontal */
+.hs{overflow-x:auto;display:flex;gap:18px;padding:50px clamp(18px,4vw,48px) 20px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--r) var(--g)}
+.hs .cd{flex:0 0 min(78vw,360px);scroll-snap-align:start;aspect-ratio:3/4}
+/* interior */
+#in{background:var(--c)}.ig{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;margin-top:50px}.ig .im{aspect-ratio:4/3;clip-path:none}
+.ls{list-style:none;padding:0;display:grid;gap:0}.ls li{padding:20px 0;border-bottom:1px solid #ffffff18;display:flex;gap:20px;transition:.3s}.ls li:hover{padding-left:14px;border-color:var(--r)}
+.ls b{font:700 22px var(--h);color:var(--r)}.ls span{color:var(--m);display:block;font-size:14px}.ls strong{font:700 22px var(--h);text-transform:uppercase;letter-spacing:.04em}
+/* slider */
+.ba{position:relative;margin-top:50px;aspect-ratio:16/8;max-height:78vh;width:100%;overflow:hidden;cursor:ew-resize;touch-action:pan-y;user-select:none;background:#000}
+.ba div.p{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
+#bf{clip-path:inset(0 50% 0 0)}.ba span{position:absolute;top:18px;font:700 14px var(--h);letter-spacing:.2em;background:#000a;padding:6px 14px;z-index:3}
+#hd{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--r);z-index:4}#hd:after{content:"◀ ▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--r);width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:12px;letter-spacing:2px}
+.tg{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-top:22px;color:var(--s);font:700 15px var(--h);letter-spacing:.14em}
+/* protection */
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#ffffff18;margin-top:50px;border:1px solid #ffffff18}.pg div{background:var(--bg);padding:34px 26px;transition:.4s}.pg div:hover{background:var(--g)}
+.pg h3{color:var(--r);margin-bottom:10px;font-size:34px}.pg p{color:var(--s);font-size:15px}
+#pr{background:linear-gradient(#07080acc,#07080aee),var(--pb) center/cover}
+/* parts */
+.fl{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 10px}.fl span{font:700 16px var(--h);letter-spacing:.14em;padding:12px 18px;border:1px solid #ffffff2a}.fl span:last-child{border-color:var(--r);color:var(--r)}
+.pl{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:40px}.pl .im{aspect-ratio:1;clip-path:none;background:#e9ecef}.pl img{filter:none;object-fit:cover;mix-blend-mode:multiply}.pl .im:hover img{filter:none}
+.oe{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:50px}.oe div{background:var(--g);padding:40px;border-top:3px solid #ffffff33}.oe div+div{border-color:var(--r)}.oe h3{font-size:54px}.oe p{color:var(--s);margin-top:10px}
+.dc{font-size:13px;color:var(--m);margin-top:20px;font-style:italic}
+/* method */
+#mt{height:380vh;padding:0;background:var(--c)}.mw{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:60px;position:relative}
+.mw:before{content:"";position:absolute;left:0;right:0;top:14px;height:1px;background:#ffffff22}
+.mw div{padding-top:40px;position:relative;opacity:.35;transition:.5s}.mw div:before{content:"";position:absolute;top:8px;left:0;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid #ffffff55;transition:.5s}
+.mw div.on{opacity:1}.mw div.on:before{background:var(--r);border-color:var(--r);box-shadow:0 0 22px var(--r)}.mw b{font:700 14px var(--h);color:var(--r);letter-spacing:.15em}.mw h3{font-size:clamp(17px,1.9vw,28px);margin-top:4px}
+/* time */
+.tm{text-align:center}
+.tm p{color:var(--s);max-width:560px;margin:28px auto 0}
+/* stats, why */
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:50px;text-align:center}.sg b{font:800 clamp(48px,7vw,96px) var(--h);display:block;line-height:1}.sg span{color:var(--m);font:700 13px var(--h);letter-spacing:.2em}
+.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}.wg div{border:1px solid #ffffff1c;padding:32px;transition:.4s;background:var(--c)}.wg div:hover{border-color:var(--r);transform:translateY(-6px)}.wg i{font:800 32px var(--h);color:var(--r);font-style:normal}.wg h3{margin:12px 0 8px}.wg p{color:var(--s);font-size:15px}
+.tg2{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}.tg2 div{background:var(--g);padding:30px;color:var(--m);font-size:15px}.tg2 b{display:block;color:var(--r);font:700 13px var(--h);letter-spacing:.2em;margin-bottom:12px}
+/* faq */
+details{border-bottom:1px solid #ffffff1f;padding:22px 0}summary{cursor:pointer;list-style:none;font:700 24px var(--h);text-transform:uppercase;display:flex;justify-content:space-between;gap:20px}summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--r);transition:.3s}details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--s);padding-top:14px;max-width:760px;animation:fd .5s}@keyframes fd{from{opacity:0;transform:translateY(-8px)}}
+/* cta, form, footer */
+#cta{text-align:center;overflow:hidden;background:#000}#cta:before{content:"";position:absolute;top:50%;left:-100%;width:100%;height:2px;background:linear-gradient(90deg,#0000,var(--r),#0000);box-shadow:0 0 30px var(--r)}#cta.in:before{animation:sw 2.4s .2s forwards}@keyframes sw{to{left:100%}}
+#cta .btn{margin:34px 8px 0}#cta h2+h2{margin-top:24px;font-size:clamp(26px,4vw,50px);color:var(--s)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}input,select,textarea{width:100%;background:var(--c);border:1px solid #ffffff22;color:#fff;font:16px var(--b);padding:16px;border-radius:0;transition:.3s}input:focus,select:focus,textarea:focus{outline:0;border-color:var(--r)}.fw{grid-column:1/-1}textarea{min-height:110px}
+footer{background:#000;padding:70px 0 30px;border-top:1px solid #ffffff18}.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px}.fg h4{font:700 14px var(--h);letter-spacing:.2em;color:var(--r);margin-bottom:14px}.fg a{display:block;color:var(--m);font-size:15px;padding:3px 0}.fg a:hover{color:#fff}.fg p{color:var(--m);margin-top:14px;max-width:300px;font:700 14px var(--h);letter-spacing:.14em}
+.cp{margin-top:50px;padding-top:22px;border-top:1px solid #ffffff18;color:var(--m);font:700 12px var(--h);letter-spacing:.18em}
+#sb{display:none}
+#cr,#cd{position:fixed;z-index:98;pointer-events:none;top:0;left:0;border-radius:50%;transform:translate(-50%,-50%)}#cd{width:7px;height:7px;background:#fff}
+#cr{width:8px;height:8px;border:1px solid #fff9;display:grid;place-items:center;font:700 11px var(--h);letter-spacing:.15em;transition:width .3s,height .3s,background .3s}#cr.h{width:84px;height:84px;background:#e11d2ecc;border-color:transparent}
+@media(max-width:960px){.bk{display:none}
+.sp,.ig,.oe,.fg{grid-template-columns:1fr}.cg{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-18px}.cg .cd{flex:0 0 78%;scroll-snap-align:start}.pg,.sg{grid-template-columns:1fr 1fr}.wg,.tg2{grid-template-columns:1fr}.pl{grid-template-columns:repeat(2,1fr)}
+.mw{grid-template-columns:1fr 1fr}.mw:before{display:none}form{grid-template-columns:1fr}.ba{aspect-ratio:4/3}.cd p{max-height:120px;opacity:1}
+#sb{display:block;position:fixed;z-index:60;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));text-align:center}.ind{display:none}footer{padding-bottom:90px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.rv,.im{opacity:1;transform:none;filter:none;clip-path:none}}
+
+/* ============================================================
+   PREMIUM LAYER
+   ============================================================ */
+:root{--r2:#ff4a5a;--ln:#ffffff14;--ease:cubic-bezier(.2,.7,.2,1)}
+html{-webkit-text-size-adjust:100%}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html:has(body.lock){overflow:hidden}
+::selection{background:var(--r);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:#07080a}::-webkit-scrollbar-thumb{background:#262a31;border:2px solid #07080a}::-webkit-scrollbar-thumb:hover{background:var(--r)}
+:focus-visible{outline:2px solid var(--r2);outline-offset:3px}
+section{isolation:isolate}
+section+section{border-top:1px solid #ffffff0a}
+h1,h2{text-wrap:balance}
+em{background:linear-gradient(100deg,#ff6b77,#f2303f 55%,#e11d2e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lb{text-shadow:0 0 24px #e11d2e66}
+p.sub{font-size:17px}
+
+/* ambient glows behind content */
+#intro:before,#services:before,#pc:before,#oem:before,#book:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(55% 45% at 90% 0,#e11d2e17,transparent 70%)}
+#pc:before{background:radial-gradient(55% 45% at 6% 0,#e11d2e17,transparent 70%)}
+#book:before{background:radial-gradient(60% 50% at 50% 100%,#e11d2e1c,transparent 70%)}
+
+/* buttons */
+.btn{position:relative;overflow:hidden;isolation:isolate;border-radius:2px;box-shadow:0 14px 34px -16px #e11d2eaa;transition:background .35s,border-color .35s,box-shadow .35s,transform .35s var(--ease)}
+.btn:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,transparent 30%,#ffffff45 50%,transparent 70%);transform:translateX(-130%);transition:transform .9s var(--ease)}
+.btn:hover:before{transform:translateX(130%)}
+.btn:hover{box-shadow:0 18px 40px -14px #e11d2ecc;transform:translateY(-2px)}
+.btn.o{backdrop-filter:blur(8px);box-shadow:none}.btn.o:hover{background:#ffffff12}
+
+/* ---------------- header + navbar ---------------- */
+header{padding:18px 0;padding-top:calc(18px + env(safe-area-inset-top,0px));border-bottom:0}
+header:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(#07080ad9,#07080a00);transition:opacity .4s;pointer-events:none}
+header:after{content:"";position:absolute;inset:0;z-index:-1;background:#07080ac2;-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);border-bottom:1px solid var(--ln);opacity:0;transition:opacity .4s;pointer-events:none}
+header.s{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;border-color:transparent;padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:10px}
+header.s:before{opacity:0}header.s:after{opacity:1}
+header .w{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.logo,header.s .logo{font-size:32px;line-height:1;transition:font-size .4s var(--ease)}header.s .logo{font-size:28px}
+.logo:before{transition:transform .8s var(--ease);box-shadow:0 0 18px #e11d2e88}.logo:hover:before{transform:rotate(330deg)}
+nav{position:relative;justify-self:center;display:flex;gap:0;padding:4px;border:1px solid var(--ln);background:#ffffff08;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+nav a{position:relative;z-index:1;padding:10px 11px;font:700 13px var(--h);letter-spacing:.12em;white-space:nowrap;color:var(--s);transition:color .3s}
+nav a:hover,nav a.act{color:#fff}
+.nl{position:absolute;z-index:0;left:0;top:4px;bottom:4px;width:0;background:linear-gradient(#e11d2e30,#e11d2e0a);border-bottom:2px solid var(--r);box-shadow:0 10px 24px -12px var(--r);transition:transform .55s var(--ease),width .55s var(--ease),opacity .3s;opacity:0}
+.nl.on{opacity:1}
+.bk{padding:12px 22px;font-size:13px;white-space:nowrap}
+.ham{display:none;position:relative;z-index:60;width:46px;height:46px;border:1px solid #ffffff2a;background:#ffffff0a;cursor:pointer;color:#fff;font-size:0;padding:0}
+.ham i{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .5s var(--ease),top .5s var(--ease),background .3s}
+.ham i:nth-child(1){top:17px}.ham i:nth-child(2){top:27px}
+.ham.x i:nth-child(1){top:22px;transform:rotate(45deg);background:var(--r2)}.ham.x i:nth-child(2){top:22px;transform:rotate(-45deg);background:var(--r2)}
+.spb{position:absolute;left:0;right:0;bottom:-1px;height:2px;z-index:1;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--r),var(--r2));box-shadow:0 0 12px var(--r);opacity:0;transition:opacity .4s}
+header.s .spb{opacity:1}
+header.cm .logo{position:relative;z-index:60}header.cm .w{display:flex}header.cm .bk{margin-left:auto}header.cm .ham{display:block}
+header.cm nav{justify-self:stretch;width:auto;position:fixed;inset:0;z-index:55;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:90px 24px 130px;border:0;background:radial-gradient(70% 45% at 50% 0,#e11d2e26,transparent 70%),#07080afa;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .7s var(--ease),visibility 0s .7s}
+header.cm nav.o{clip-path:inset(0);visibility:visible;transition:clip-path .7s var(--ease)}
+header.cm nav a{font-size:clamp(30px,6.4vw,46px);letter-spacing:.1em;padding:6px 0;opacity:0;transform:translateY(22px);transition:opacity .6s,transform .7s var(--ease),color .3s}
+header.cm nav.o a{opacity:1;transform:none;transition-delay:calc(var(--i)*55ms + .2s)}
+header.cm nav a.act{color:var(--r2)}header.cm .nl{display:none}
+@media(max-width:960px){header.cm .ham{margin-left:auto}}
+
+/* hero */
+#hero h1{text-shadow:0 8px 50px #000a}
+.sl video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12);transition:transform 9s linear,opacity .8s}
+.sl.on video{transform:scale(1)}.sl video.rd{opacity:1}
+.ind{text-shadow:0 2px 14px #000}
+
+/* philosophy backdrop clips */
+#ph .pv{position:absolute;inset:0;z-index:0}
+#ph .pv video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:brightness(.5) saturate(.9);transform:scale(1.06);transition:opacity 1.1s,transform 6s linear}
+#ph .pv video.on{opacity:1;transform:scale(1)}
+#ph .st:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,#0000 0,#000d 95%)}
+#ph .st h2{z-index:2;text-shadow:0 6px 60px #000}#ph .st i{z-index:3;box-shadow:0 0 16px var(--r)}
+
+/* cards */
+.cd{border:1px solid var(--ln);transition:border-color .5s,transform .6s var(--ease),box-shadow .6s}
+.cd:hover{border-color:#e11d2e66;transform:translateY(-4px);box-shadow:0 34px 60px -34px #e11d2e88}
+.cd video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:brightness(.8);transition:opacity .8s,transform 1s,filter .6s}
+.cd video.live{opacity:1}.cd:hover video{transform:scale(1.08);filter:brightness(1)}
+.cd small{text-shadow:0 0 14px #000}.cd h3{text-shadow:0 2px 18px #000}
+
+/* interior video stage */
+.vs{position:relative;background:#000;aspect-ratio:4/3;border:1px solid var(--ln)}
+.vs video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:brightness(.92);transition:opacity .8s,transform 1.2s var(--ease)}
+.vs video.on{opacity:1}.vs:hover video{transform:scale(1.04)}
+.vs:before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(0deg,#07080acc 0,#0000 38%)}
+.vcap{position:absolute;left:18px;bottom:22px;z-index:3;display:flex;gap:12px;align-items:baseline;padding:9px 16px;background:#07080ad9;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-left:2px solid var(--r)}
+.vcap b{font:700 14px var(--h);color:var(--r2);letter-spacing:.18em}.vcap span{font:700 16px var(--h);letter-spacing:.12em;text-transform:uppercase}
+.vp{position:absolute;top:0;left:0;height:3px;width:0;background:var(--r);z-index:3;box-shadow:0 0 14px var(--r)}
+.ls li{cursor:pointer;position:relative;transition:padding .35s,border-color .35s,opacity .35s}
+.ls li:not(.on){opacity:.62}.ls li:hover{opacity:1}
+.ls li.on{padding-left:14px;border-color:var(--r)}
+.ls li.on:before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:2px;background:var(--r);box-shadow:0 0 14px var(--r)}
+
+/* slider */
+.ba{border:1px solid var(--ln);box-shadow:0 50px 90px -50px #000}
+.ba span{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid #ffffff22}
+#hd{box-shadow:0 0 22px #e11d2ecc}#hd:after{box-shadow:0 8px 30px #000a;border:2px solid #ffffff55}
+
+/* protection / oem / why / reviews */
+.pg{border-color:var(--ln)}.pg div{position:relative}
+.pg div:before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--r);transition:width .6s var(--ease)}.pg div:hover:before{width:100%}
+.oe div{background:linear-gradient(160deg,#1f232a,#14171c);border-left:1px solid var(--ln);border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.oe div+div{background:linear-gradient(160deg,#2a1519,#14171c)}
+.wg div{background:linear-gradient(170deg,#14171c,#0e1013);box-shadow:inset 0 1px 0 #ffffff0a}.wg div:hover{box-shadow:0 30px 50px -30px #e11d2e66,inset 0 1px 0 #ffffff14}
+.tg2 div{background:linear-gradient(170deg,#1d2026,#14171c);border:1px solid var(--ln);position:relative;padding-top:48px}
+.tg2 div:before{content:"\201C";position:absolute;top:8px;left:26px;font:800 54px/1 var(--h);color:var(--r);opacity:.5}
+.fl span{background:#ffffff06;transition:.3s}.fl span:hover{background:#ffffff10}
+
+/* stats */
+.sg>div{border-left:1px solid var(--ln);padding:10px 0}.sg>div:first-child{border-left:0}
+.sg b{background:linear-gradient(#fff,#8d939c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* method progress */
+.mw:after{content:"";position:absolute;left:0;top:14px;height:1px;width:var(--mp,0%);background:var(--r);box-shadow:0 0 12px var(--r);transition:width .5s}
+
+/* clock */
+.ck{position:relative;width:min(760px,94vw);margin:0 auto 10px}
+.ck video{display:block;mix-blend-mode:screen;width:100%;aspect-ratio:832/576;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);mask-composite:intersect}
+.ck:after{content:"";position:absolute;left:50%;top:50%;width:60%;height:60%;transform:translate(-50%,-50%);z-index:-1;background:radial-gradient(circle,#e11d2e30,transparent 70%);filter:blur(30px)}
+.tm h2{margin-top:8px}
+
+/* faq */
+summary{transition:color .3s}summary:hover{color:var(--r2)}summary:after{font-size:30px;line-height:.8}
+details{transition:border-color .4s}details[open]{border-color:#e11d2e66}details[open] summary{color:#fff}
+
+/* form */
+input,select,textarea{background:#0e1115;color-scheme:dark;border-color:#ffffff1f}
+input::placeholder,textarea::placeholder{color:#6d737c}
+input:hover,select:hover,textarea:hover{border-color:#ffffff40}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px #e11d2e26}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%23e11d2e' stroke-width='2'%3E%3Cpath d='M1 1l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;padding-right:44px}
+
+/* footer */
+footer{position:relative}footer:before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--r),transparent);opacity:.7}
+.fg a{transition:color .3s,transform .3s}.fg a:hover{transform:translateX(4px)}
+
+html{overflow-x:clip}
+@media(max-width:960px){.pg{grid-template-columns:repeat(2,minmax(0,1fr))}.pg div{padding:28px 20px}.pg h3{font-size:clamp(24px,7vw,34px);overflow-wrap:anywhere}.sg>div:nth-child(odd){border-left:0}.mw:after{display:none}.ck{margin-bottom:0}}
+@media(prefers-reduced-motion:reduce){.btn:before{display:none}}
+
+/* ============================================================
+   SYNC + LAYOUT PASS
+   ============================================================ */
+/* one shared reveal language: no blur, same easing everywhere */
+.rv{filter:none;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.rv.in{opacity:1;transform:none}
+/* hero: zoom is exactly as long as the slide; video slides don't double-zoom */
+.sl{transition:opacity 1.2s var(--ease)}
+.sl img{transform:scale(1.12);transition:transform var(--sd,5500ms) linear}
+.sl.on img{transform:scale(1.12)}body.go .sl.on img{transform:scale(1)}
+.sl video{transform:none!important;transition:opacity .9s}
+.hbar{position:absolute;left:0;right:0;bottom:0;height:2px;background:#ffffff14;z-index:4}
+.hbar i{display:block;height:100%;width:0;background:var(--r);box-shadow:0 0 12px var(--r)}
+#ph .pv video{transition:opacity .9s var(--ease),transform 6s linear}
+.st h2{transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+
+/* section rhythm */
+section{padding:clamp(80px,11vw,150px) 0}
+
+/* services: calmer, taller cards */
+.cg .cd{aspect-ratio:4/5}
+
+/* exclusive treatments: bento on desktop, swipe row on mobile */
+@media(min-width:961px){
+ #ex{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(240px,24vw,330px);gap:18px;overflow:visible;scroll-snap-type:none;max-width:1280px;margin:0 auto;padding:50px clamp(18px,4vw,48px) 0}
+ #ex .cd{aspect-ratio:auto;flex:none;min-width:0}
+ #ex .cd:nth-child(1),#ex .cd:nth-child(6),#ex .cd:nth-child(7),#ex .cd:nth-child(8){grid-column:span 2}
+ #ex .cd div{left:26px;right:26px;bottom:26px}
+ #ex .cd h3{font-size:clamp(22px,2.2vw,30px)}
+}
+
+/* parts: one hero tile + four */
+.pl{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px)}
+.pl .im{aspect-ratio:auto}.pl .im:first-child{grid-column:span 2;grid-row:span 2}
+
+/* faq + booking: sticky heading beside the content */
+.fq-w,.bk-w{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.5fr);grid-template-rows:auto 1fr auto;column-gap:clamp(30px,6vw,90px)}
+.fq-w{max-width:1280px}.bk-w{max-width:1180px!important}
+.fq-w>.lb,.bk-w>.lb{grid-column:1;grid-row:1}
+.fq-w>h2,.bk-w>h2{grid-column:1;grid-row:2;align-self:start;position:sticky;top:120px;margin:0}
+.fq-w>#fq{grid-column:2;grid-row:1/span 3}
+.bk-w>form{grid-column:2;grid-row:1/span 2;margin-top:0}.bk-w>.ph-note{grid-column:2;grid-row:3}
+.fq-w>h2,.bk-w>h2{font-size:clamp(32px,4.2vw,62px);min-width:0;overflow-wrap:anywhere}
+.fq-w,.bk-w{grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr)}
+details:first-child{border-top:1px solid #ffffff1f}
+
+/* intro image gets a red offset frame */
+.sp>.ph-big{overflow:visible;clip-path:none;position:relative}
+.sp>.ph-big img{position:relative;z-index:1}
+.sp>.ph-big:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid #e11d2e66;z-index:0;transition:transform .8s var(--ease)}
+.sp>.ph-big:hover:before{transform:translate(8px,8px)}
+.sp>.ph-big:after{z-index:2}
+
+/* reviews: slight stagger for rhythm */
+@media(min-width:961px){.tg2 div:nth-child(2){margin-top:28px}.wg div:nth-child(3n+2){margin-top:20px}}
+
+@media(max-width:960px){
+ .fq-w,.bk-w{display:block}.fq-w>h2,.bk-w>h2{position:static;margin-bottom:30px}.bk-w>form{margin-top:10px}
+ .pl{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto}.pl .im{aspect-ratio:1}.pl .im:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}
+ .cg .cd{aspect-ratio:3/4}.sp>.ph-big:before{inset:12px -8px -12px 8px}
+}
+</style></head><body>
+<div id="ld"><i></i><b>ARS</b></div><div id="cd"></div><div id="cr"></div>
+<header id="hdr"><div class="w"><a href="#hero" class="logo" aria-label="ARS home">ARS</a><nav id="nv" aria-label="Primary"><span class="nl" id="nl"></span><a href="#hero" style="--i:0">Home</a><a href="#intro" style="--i:1">About</a><a href="#services" style="--i:2">Services</a><a href="#in" style="--i:3">Detailing</a><a href="#pc" style="--i:4">Restoration</a><a href="#pr" style="--i:5">Protection</a><a href="#oem" style="--i:6">OEM / OEM+</a><a href="#book" style="--i:7">Contact</a></nav><a href="#book" class="btn bk">Book your service</a><button class="ham" id="hm" aria-label="Open menu" aria-expanded="false" aria-controls="nv"><i></i><i></i></button></div><div class="spb" id="spb"></div></header>
+
+<section id="hero"><div id="sls"></div><div class="gr"></div>
+<div class="hbar"><i id="hpb"></i></div><div class="ind"><b id="ix">01</b> / 04 — <span id="il">DETAILING</span></div>
+<div class="w hc"><span class="lb hf">ARS Automotive Detailing &amp; Restoration</span>
+<h1><span>The Art of</span><br><span>Auto<em>motive</em></span><br><span>Detailing.</span></h1>
+<div class="hf"><p>Precision detailing. Restoration. Protection.<br>Every vehicle deserves more than a wash. It deserves precision.</p><a href="#book" class="btn">Book your service</a><a href="#mt" class="btn o">Explore our process</a></div></div></section>
+
+<section id="intro"><div class="w sp"><div class="im ph-big"><img data-i="inter" alt="Detailer working on a leather interior"></div>
+<div class="rv"><span class="lb">The ARS Standard</span><h2>Restore the detail. Preserve the <em>machine.</em></h2><p>ARS combines professional detailing techniques, restoration processes and advanced protection systems to bring vehicles back to their best condition.</p><p>We don’t simply clean vehicles. We inspect, correct, restore, protect and preserve them.</p><a href="#services" class="btn">Discover ARS</a></div></div></section>
+
+<section id="ph"><div class="st"><div class="pv" aria-hidden="true"><video muted loop playsinline preload="none" data-src="assets/video/fabric-extraction.mp4" poster="assets/video/fabric-extraction.jpg"></video><video muted loop playsinline preload="none" data-src="assets/video/germ-clean.mp4" poster="assets/video/germ-clean.jpg"></video><video muted loop playsinline preload="none" data-src="assets/video/plastic-care.mp4" poster="assets/video/plastic-care.jpg"></video></div><h2>Clean is<br>not enough.</h2><h2>Precision<br><em>matters.</em></h2><h2>Protection<br>lasts.</h2><h2 style="letter-spacing:.2em">ARS</h2><i id="pb"></i></div></section>
+
+<section id="services"><div class="w"><span class="lb rv">What we do</span><h2 class="rv">Fresh water wash.</h2><p class="sub rv">The foundation of proper vehicle care.</p>
+<div class="cg" id="fw"></div></div></section>
+
+<section style="padding-left:0;padding-right:0;background:var(--c)"><div class="w"><span class="lb rv">Exclusive treatments</span><h2 class="rv">Engineered for every detail.</h2></div><div class="hs" id="ex"></div></section>
+
+<section id="in"><div class="w"><span class="lb rv">Interior restoration</span><h2 class="rv">Inside matters <em>just as much.</em></h2>
+<div class="ig"><div class="im vs rv" id="vs" data-v><i class="vp" id="vp"></i><video muted playsinline preload="none" class="on" data-src="assets/video/germ-clean.mp4" poster="assets/video/germ-clean.jpg" aria-label="Technician applying germ-clean spray and wiping a dashboard"></video><video muted playsinline preload="none" data-src="assets/video/steam-clean.mp4" poster="assets/video/steam-clean.jpg" aria-label="Steam cleaning interior door panel"></video><video muted playsinline preload="none" data-src="assets/video/fabric-extraction.mp4" poster="assets/video/fabric-extraction.jpg" aria-label="Fabric seat and carpet dirt extraction"></video><video muted playsinline preload="none" data-src="assets/video/plastic-care.mp4" poster="assets/video/plastic-care.jpg" aria-label="Plastic trim restoration"></video><div class="vcap"><b id="vn">01</b><span id="vt">Germ clean</span></div></div><ul class="ls rv" id="ils">
+<li data-c="0" tabindex="0" role="button" class="on"><b>01</b><div><strong>Germ clean</strong><span>Full interior panels</span></div></li><li data-c="1" tabindex="0" role="button"><b>02</b><div><strong>Steam</strong><span>Full interior panels</span></div></li><li data-c="2" tabindex="0" role="button"><b>03</b><div><strong>Dirt extraction</strong><span>Fabric seats &amp; floors</span></div></li><li data-c="3" tabindex="0" role="button"><b>04</b><div><strong>Leather &amp; plastic care</strong><span>Restoration of finish and feel</span></div></li></ul></div></div></section>
+
+<section id="pc"><div class="w"><span class="lb rv">Paint correction</span><h2 class="rv">From imperfection <em>to reflection.</em></h2>
+<div class="ba" id="ba"><div class="p" id="af"></div><div class="p" id="bf"></div><span style="left:18px">BEFORE</span><span style="right:18px">AFTER</span><div id="hd"></div></div>
+<div class="tg"><div>BEFORE — Scratches · Swirls · Oxidation · Fading</div><div>AFTER — Gloss · Depth · Clarity · Reflection</div></div>
+<p class="ph-note">Drag the slider. Sample image supplied for layout — swap for ARS’s own before/after work.</p></div></section>
+
+<section id="pr"><div class="w"><span class="lb rv">Paint protection</span><h2 class="rv">Protect the <em>finish.</em></h2>
+<div class="pg rv"><div><h3>Wax</h3><p>Gloss and surface enhancement.</p></div><div><h3>Sealant</h3><p>Longer-lasting surface protection.</p></div><div><h3>Graphene</h3><p>Advanced protective performance.</p></div><div><h3>Ceramic</h3><p>High-performance surface protection.</p></div></div>
+<p class="ph-note">Professional services performed by ARS — not products for sale.</p></div></section>
+
+<section><div class="w"><span class="lb rv">Critical parts</span><h2 class="rv">Critical parts. <em>Properly restored.</em></h2><p class="sub rv">ARS provides professional cleaning, restoration and replacement support for critical vehicle components, where applicable.</p>
+<div class="fl rv"><span>Inspect</span><span>Clean</span><span>Restore</span><span>Replace when required</span><span>Protect</span></div>
+<div class="pl" id="pl"></div></div></section>
+
+<section id="oem" style="background:var(--c)"><div class="w"><span class="lb rv">OEM / OEM+</span><h2 class="rv">When replacement is required, we keep the standard <em>high.</em></h2>
+<div class="oe rv"><div><h3>OEM</h3><p>Original-equipment standard.</p></div><div><h3>OEM<em>+</em></h3><p>Enhanced or upgraded replacement solutions where appropriate.</p></div></div>
+<p class="dc">Replacement availability and suitability depend on vehicle condition, model and component requirements.</p></div></section>
+
+<section id="mt"><div class="st" style="align-content:center;text-align:left;place-items:center"><div class="w" style="width:100%"><span class="lb">The ARS Method</span><h2>Eight steps. <em>No shortcuts.</em></h2><div class="mw" id="mw"></div></div><i id="mb"></i></div></section>
+
+<section class="tm"><div class="w"><div class="ck rv"><video id="ckv" muted loop playsinline preload="metadata" src="assets/video/clock.mp4" poster="assets/video/clock.jpg" role="img" aria-label="Animated clock inside a glowing ring"></video></div><h2 class="rv">Time heals <em>everything.</em></h2><h2 class="rv" style="color:var(--s);font-size:clamp(28px,5vw,64px);margin-top:18px">But great detailing takes time.</h2><p class="rv">Kindly give us the required time to serve your vehicle. Professional detailing is not rushed. Every process is performed carefully for the best possible outcome.</p></div></section>
+
+<section style="background:var(--c)"><div class="w"><span class="lb rv">By the numbers</span><h2 class="rv">ARS in figures.</h2>
+<div class="sg" id="sg"></div><p class="ph-note" style="text-align:center">PLACEHOLDER VALUES — replace with real ARS numbers.</p></div></section>
+
+<section><div class="w"><span class="lb rv">Why ARS?</span><h2 class="rv">Why <em>ARS?</em></h2><div class="wg" id="wg"></div></div></section>
+
+<section style="background:var(--c)"><div class="w"><span class="lb rv">Customer experience</span><h2 class="rv">Your vehicle. <em>Our responsibility.</em></h2>
+<div class="tg2"><div><b>PLACEHOLDER REVIEW</b>Replace with a genuine customer review.</div><div><b>PLACEHOLDER REVIEW</b>Replace with a genuine customer review.</div><div><b>PLACEHOLDER REVIEW</b>Replace with a genuine customer review.</div></div></div></section>
+
+<section><div class="w fq-w"><span class="lb rv">FAQ</span><h2 class="rv">Questions.</h2><div id="fq"></div></div></section>
+
+<section id="cta"><div class="w"><h2 class="rv">Your car deserves <em>more than a wash.</em></h2><h2 class="rv">Experience the art of automotive detailing.</h2><a class="btn" href="#book">Book your service</a><a class="btn o" href="#book">Contact ARS</a></div></section>
+
+<section id="book"><div class="w bk-w"><span class="lb rv">Contact / booking</span><h2 class="rv">Request a <em>service.</em></h2>
+<form id="fm"><input placeholder="Name" required><input placeholder="Phone" type="tel" required><input placeholder="Vehicle brand"><input placeholder="Vehicle model">
+<select class="fw" id="sv" required><option value="">Service required</option></select><input type="date"><input type="time"><textarea class="fw" placeholder="Additional requirements"></textarea>
+<button class="btn fw" type="submit">Request service</button></form><p class="ph-note" id="fn">Demo form — connect to ARS’s phone / WhatsApp / email before launch. No appointment availability is shown.</p></div></section>
+
+<footer><div class="w"><div class="fg"><div><a href="#hero" class="logo">ARS</a><p>EXPERIENCE THE ART OF AUTOMOTIVE DETAILING.</p></div>
+<div><h4>SERVICES</h4><a href="#services">Fresh Water Wash</a><a href="#in">Interior Care</a><a href="#pc">Paint Correction</a><a href="#pr">Protection</a><a href="#ex">Exclusive Treatments</a></div>
+<div><h4>ARS</h4><a href="#intro">About</a><a href="#mt">Our Process</a><a href="#pc">Gallery</a><a href="#fq">FAQ</a></div>
+<div><h4>SUPPORT</h4><a href="#book">Contact</a><a href="#book">Book Service</a><a href="#book">Location — TBA</a><a href="#book">Privacy</a></div></div>
+<div class="cp">© 2026 ARS. ALL RIGHTS RESERVED. · SOCIAL LINKS — TO BE ADDED</div></div></footer>
+<a href="#book" class="btn" id="sb">Book your service</a>
+
+<script>
+const IMG={"foam": "assets/foam.jpg", "inter": "assets/inter.jpg", "egr": "assets/egr.jpg", "studio": "assets/studio.jpg", "steam": "assets/steam.jpg", "under": "assets/under.jpg", "polish": "assets/polish.jpg", "wheel": "assets/wheel.jpg", "ba": "assets/ba.jpg", "valve": "assets/valve.jpg", "inj": "assets/inj.jpg", "parts": "assets/parts.jpg", "susp": "assets/susp.jpg", "eng": "assets/engine-bay.jpg", "glass": "assets/glass.jpg", "ratr": "assets/rat-repellent.jpg", "rato": "assets/rat-odour.jpg"};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const im=(k,a='')=>k?`<img src="${IMG[k]}" alt="${a}" loading="lazy">`:'<div class="ph">IMAGE PLACEHOLDER</div>';
+$$('[data-i]').forEach(e=>e.src=IMG[e.dataset.i]);
+// video helpers
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const vload=v=>{if(!v.getAttribute('src')&&v.dataset.src){v.src=v.dataset.src;v.load()}};
+const vplay=v=>{vload(v);if(RM)return;const p=v.play();p&&p.catch(()=>{})};
+let phVis=false,phK=0,heroVis=true;
+function phSync(force){$$('#ph video').forEach((v,i)=>{const act=i===phK,was=v.classList.contains('on');v.classList.toggle('on',act);clearTimeout(v._t);
+if(act&&phVis){if(!was||force){try{v.currentTime=0}catch(e){}}if(v.paused)vplay(v)}else{v._t=setTimeout(()=>{if(!v.classList.contains('on')||!phVis)v.pause()},1000)}})}
+// cards
+const card=(n,t,d,k,pos)=>`<div class="cd" data-v><${k?'img src="'+IMG[k]+'" alt="'+t+'" loading="lazy" style="object-position:'+(pos||'center')+'"':'div class="ph"'}>${k?'':'IMAGE PLACEHOLDER</div>'}<div><small>${n}</small><h3>${t}</h3><p>${d}</p></div></div>`;
+$('#fw').innerHTML=[['01','Foam, wax, degrease &amp; ceramic wash','Controlled exterior washing, degreasing and surface protection.','foam'],['02','Clay bar descaling wash','Removal of bonded contaminants using a controlled clay-bar treatment.','studio'],['03','Glass hard-water mark removal &amp; sealant','Remove mineral deposits and restore clarity before sealing.','glass','55% 50%']].map(a=>card(...a)).join('');
+$('#ex').innerHTML=[['01','Engine bay','Deep cleaning &amp; protection.','eng','50% 55%'],['02','Alloy wheels','Deep cleaning &amp; protection.','wheel'],['03','Glass','Hard-water mark removal &amp; sealant.','glass','60% 50%'],['04','Rat repellent','Preventive vehicle protection.','ratr','78% 50%'],['05','Rat entry odour','Elimination process.','rato','50% 40%'],['06','Plastic &amp; rubber','Restoration &amp; care.','inter','80% 60%'],['07','Underchassis','Protection coating.','under','50% 20%'],['08','Silencer','Protection coating.','under','50% 90%']].map(a=>card(...a)).join('');
+{const c6=$$('#ex .cd')[5];c6.classList.add('has-v');c6.querySelector('div').insertAdjacentHTML('beforebegin','<video muted loop playsinline preload="none" data-src="assets/video/plastic-care.mp4" poster="assets/video/plastic-care.jpg" aria-hidden="true"></video>');
+const cv=c6.querySelector('video');new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){vplay(cv);cv.classList.add('live')}else{cv.pause();cv.classList.remove('live')}}),{threshold:.55}).observe(c6);}
+$('#pl').innerHTML=['egr','inj','valve','parts','susp'].map(k=>`<div class="im in" data-v><img src="${IMG[k]}" alt="Automotive component" loading="lazy"></div>`).join('');
+$('#mw').innerHTML=['Inspect','Diagnose','Prepare','Detail','Correct','Protect','Final inspection','Deliver'].map((t,i)=>`<div><b>0${i+1}</b><h3>${t}</h3></div>`).join('');
+$('#sg').innerHTML=[['Vehicles served'],['Detailing processes'],['Years of experience'],['Customer satisfaction']].map((a,i)=>`<div><b data-n="${[000,000,0,0][i]}">00</b><span>${a[0].toUpperCase()}</span></div>`).join('');
+$('#wg').innerHTML=[['Detail-first approach','Every process begins with inspection and preparation.'],['Professional process','Structured procedures rather than rushed cleaning.'],['OEM / OEM+ support','Replacement solutions when restoration is not enough.'],['Advanced protection','Wax, sealant, graphene and ceramic protection.'],['Critical part care','Detailed cleaning and protection of important vehicle areas.'],['Final inspection','Every vehicle receives a final quality check.']].map((a,i)=>`<div class="rv"><i>0${i+1}</i><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('');
+const fq=[['How long does detailing take?','It depends on the vehicle and the treatment. Professional detailing is not rushed; ARS will advise a timeframe after inspection.'],['Can I book a specific treatment?','Yes — choose any treatment in the booking form.'],['Do you perform paint correction?','Yes. Scratch, swirl and fade correction, followed by protection.'],['Do you remove hard-water marks from glass?','Yes, with a sealant applied afterwards.'],['Do you provide engine-bay cleaning?','Yes — deep cleaning and protection.'],['Do you provide interior steam cleaning?','Yes, for full interior panels.'],['Do you provide ceramic coating?','Yes, as a professional ARS service.'],['Do you provide graphene protection?','Yes, as a professional ARS service.'],['Do you handle rat-repellent treatment?','Yes — preventive protection, plus odour elimination where rats have entered.'],['Do you provide OEM replacement support?','Where suitable, yes. Availability depends on vehicle and component.'],['What is OEM+ replacement?','Enhanced or upgraded replacement solutions where appropriate.'],['How long should I leave my vehicle with ARS?','ARS will confirm the time needed after inspecting your vehicle.'],['Do all vehicles require the same process?','No. Every vehicle is inspected and treated according to its condition.']];
+$('#fq').innerHTML=fq.map(a=>`<details><summary>${a[0]}</summary><p>${a[1]}</p></details>`).join('');
+$('#sv').innerHTML+=['Fresh Water Wash','Interior Cleaning','Exclusive Treatment','Paint Correction','Paint Protection','Ceramic Coating','Graphene Protection','Engine Bay Detailing','Rat Treatment','Underchassis Protection','Silencer Protection','OEM / OEM+ Replacement Support','Other'].map(s=>`<option>${s}</option>`).join('');
+$('#fm').onsubmit=e=>{e.preventDefault();$('#fn').textContent='Thank you — this demo form does not send data yet.'};
+// hero slides
+const hs=[['studio','Detailing'],['steam','Restoration'],['under','Protection'],['polish','Precision care']];
+const HV={1:'steam-clean',3:'plastic-care'};
+$('#sls').innerHTML=hs.map((s,i)=>`<div class="sl${i?'':' on'}"><img src="${IMG[s[0]]}" alt="">${HV[i]?`<video muted playsinline preload="none" data-src="assets/video/${HV[i]}.mp4" poster="assets/video/${HV[i]}.jpg" aria-hidden="true"></video>`:''}</div>`).join('');
+$$('.sl video').forEach(v=>v.addEventListener('playing',()=>v.classList.add('rd')));
+new IntersectionObserver(es=>es.forEach(e=>{heroVis=e.isIntersecting;const v=$$('.sl')[hi]&&$$('.sl')[hi].querySelector('video');if(v){heroVis?vplay(v):v.pause()}}),{threshold:.2}).observe($('#hero'));
+var hi=0,hTimer=0;const HD=[5500,6500,5500,9500],hbar=$('#hpb');
+function hBar(ms){hbar.style.transition='none';hbar.style.width='0';void hbar.offsetWidth;hbar.style.transition=`width ${ms}ms linear`;hbar.style.width='100%'}
+function heroShow(n){const s=$$('.sl'),prev=s[hi],pv=prev.querySelector('video');hi=n;const cur=s[n],v=cur.querySelector('video');cur.style.setProperty('--sd',HD[n]+'ms');let fired=false;
+const go=()=>{if(fired)return;fired=true;prev.classList.remove('on');if(pv)setTimeout(()=>{if(!prev.classList.contains('on'))pv.pause()},1400);cur.classList.add('on');$('#ix').textContent='0'+(n+1);$('#il').textContent=hs[n][1].toUpperCase();hBar(HD[n]);clearTimeout(hTimer);hTimer=setTimeout(()=>heroShow((n+1)%4),HD[n])};
+if(v&&heroVis&&!RM){try{v.currentTime=0}catch(e){}v.addEventListener('playing',go,{once:true});vplay(v);setTimeout(go,2200)}else go()}
+function heroStart(){const c=$$('.sl')[0];c.style.setProperty('--sd',HD[0]+'ms');hBar(HD[0]);hTimer=setTimeout(()=>heroShow(1),HD[0])}
+// before/after
+$('#af').style.backgroundImage=`url(${IMG.ba})`;$('#af').style.backgroundSize='200% 100%';$('#af').style.backgroundPosition='100% 0';
+$('#bf').style.backgroundImage=`url(${IMG.ba})`;$('#bf').style.backgroundSize='200% 100%';$('#bf').style.backgroundPosition='0 0';
+const ba=$('#ba');let dr=0;const mv=x=>{const r=ba.getBoundingClientRect(),p=Math.max(0,Math.min(1,(x-r.left)/r.width))*100;$('#bf').style.clipPath=`inset(0 ${100-p}% 0 0)`;$('#hd').style.left=p+'%'};
+ba.onpointerdown=e=>{dr=1;ba.setPointerCapture(e.pointerId);mv(e.clientX)};ba.onpointermove=e=>dr&&mv(e.clientX);ba.onpointerup=()=>dr=0;
+// header, menu, loader
+const hd=$('header');addEventListener('scroll',()=>hd.classList.toggle('s',scrollY>60),{passive:true});
+const nvEl=$('#nv'),hmEl=$('#hm');
+function menu(o){nvEl.classList.toggle('o',o);hmEl.classList.toggle('x',o);hmEl.setAttribute('aria-expanded',o);hmEl.setAttribute('aria-label',o?'Close menu':'Open menu');document.body.classList.toggle('lock',o)}
+hmEl.onclick=()=>menu(!nvEl.classList.contains('o'));$$('#nv a').forEach(a=>a.addEventListener('click',()=>menu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});
+// scroll-spy + progress
+const spyS=['hero','intro','services','in','pc','pr','oem','book'].map(id=>document.getElementById(id)),spyL=$$('#nv a'),nlEl=$('#nl'),spb=$('#spb');let spyK=-1;
+function spyPos(){const a=spyL[spyK];if(!a||hd.classList.contains('cm'))return;nlEl.style.width=a.offsetWidth+'px';nlEl.style.transform=`translateX(${a.offsetLeft}px)`;nlEl.classList.add('on')}
+function spy(){let k=0;const y=innerHeight*.4;spyS.forEach((s,i)=>{if(s.getBoundingClientRect().top<=y)k=i});if(k!==spyK){spyK=k;spyL.forEach((a,i)=>{a.classList.toggle('act',i===k);i===k?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current')});spyPos()}
+const m=document.documentElement.scrollHeight-innerHeight;spb.style.transform=`scaleX(${m>0?Math.min(1,scrollY/m):0})`}
+addEventListener('scroll',spy,{passive:true});function fit(){hd.classList.remove('cm');const w=$('header .w'),cs=getComputedStyle(w),av=w.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight),bk=$('.bk'),need=$('.logo').offsetWidth+nvEl.offsetWidth+(bk.offsetParent?bk.scrollWidth:0)+56;const c=innerWidth<=960||need>av;hd.classList.toggle('cm',c);if(!c)menu(false);spyPos()}
+addEventListener('resize',fit);addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);fit();spy();
+setTimeout(()=>{$('#ld').classList.add('x');document.body.classList.add('go');$$('.sl video').forEach(vload);heroStart()},2300);
+// reveal + counters
+const io=new IntersectionObserver(es=>{let k=0;es.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top||a.boundingClientRect.left-b.boundingClientRect.left).forEach(e=>{const t=e.target;if(t.classList.contains('rv')||t.classList.contains('im')){t.style.transitionDelay=(k++*110)+'ms';setTimeout(()=>{t.style.transitionDelay=''},1600)}t.classList.add('in');if(t.dataset.n!==undefined)cnt(t);io.unobserve(t)})},{threshold:.15});
+$$('.rv,.im,#cta,[data-n]').forEach(e=>io.observe(e));
+function cnt(e){let n=0;const t=+e.dataset.n,iv=setInterval(()=>{n+=Math.max(1,t/40|0);if(n>=t){n=t;clearInterval(iv)}e.textContent=String(n).padStart(2,'0')},30)}
+// sticky storytelling
+function stk(sec,fn){const f=()=>{const r=sec.getBoundingClientRect(),p=Math.max(0,Math.min(.999,-r.top/(r.height-innerHeight)));fn(p)};addEventListener('scroll',f,{passive:true});f()}
+const ps=$$('#ph h2');stk($('#ph'),p=>{const k=Math.floor(p*4);ps.forEach((h,i)=>h.classList.toggle('on',i===k));$('#pb').style.width=p*100+'%';if(k!==phK){phK=k;phSync()}});
+new IntersectionObserver(es=>es.forEach(e=>{phVis=e.isIntersecting;if(phVis)$$('#ph video').forEach(vload);phSync(phVis)}),{rootMargin:'500px 0px'}).observe($('#ph'));
+const ms=$$('#mw div');ms[0].classList.add('on');stk($('#mt'),p=>{const k=Math.min(7,Math.floor(p*8.2));ms.forEach((m,i)=>m.classList.toggle('on',i<=k));$('#mw').style.setProperty('--mp',(k*12.5+.8)+'%');$('#mb').style.width=p*100+'%'});
+$('#pr').style.setProperty('--pb',`url(${IMG.polish})`);
+// interior clip switcher
+const iv=$$('#vs video'),il=$$('#ils li');let ic=0,iVis=false;
+function setI(n){ic=n;iv.forEach((v,i)=>{v.classList.toggle('on',i===n);if(i!==n)v.pause();else{vload(v);v.currentTime=0;if(iVis)vplay(v)}});vload(iv[(n+1)%iv.length]);il.forEach((l,i)=>l.classList.toggle('on',i===n));$('#vn').textContent='0'+(n+1);$('#vt').textContent=il[n].querySelector('strong').textContent;$('#vp').style.width='0'}
+iv.forEach((v,i)=>{v.addEventListener('ended',()=>{if(i===ic)setI((i+1)%iv.length)});v.addEventListener('timeupdate',()=>{if(i===ic&&v.duration)$('#vp').style.width=v.currentTime/v.duration*100+'%'})});
+il.forEach((l,i)=>{l.addEventListener('click',()=>setI(i));l.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setI(i)}})});
+new IntersectionObserver(es=>es.forEach(e=>{iVis=e.isIntersecting;const v=iv[ic];if(iVis){vplay(v)}else v.pause()}),{threshold:.2}).observe($('#vs'));
+// clock
+{const ck=$('#ckv');let first=1;new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){if(first){try{ck.currentTime=0}catch(x){}first=0}vplay(ck)}else ck.pause()}),{threshold:.15}).observe(ck)}
+// cursor
+if(matchMedia('(hover:hover) and (pointer:fine)').matches){const d=$('#cd'),r=$('#cr');let x=0,y=0,rx=0,ry=0;addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;d.style.left=x+'px';d.style.top=y+'px';const t=e.target.closest('[data-v],.btn');r.classList.toggle('h',!!t);r.textContent=t?(t.dataset.v!==undefined?'VIEW':'OPEN'):''});(function l(){rx+=(x-rx)*.18;ry+=(y-ry)*.18;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(l)})()}else{$('#cd').remove();$('#cr').remove()}
+</script></body></html>
